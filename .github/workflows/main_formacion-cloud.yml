@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'formacion-cloud'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8FA0EBF7742C43DB91D4DDA66895EBC5 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_139B9D66D3154E4E91B23E9EEE1FC156 }}
