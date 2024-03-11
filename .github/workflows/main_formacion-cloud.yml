@@ -7,7 +7,24 @@ stages:
         - script: |
             python3 -m pip install -r requirements.txt
           displayName: "Install dependencies"
+        - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+      
+        - name: Install dependencies
+        run: pip install -r requirements.txt
+        
+        - name: Install Node Modules
+        run: |
+          cd frontend
+          npm install
 
+        - name: Build Frontend
+        run: |
+          cd frontend
+          npm run build
+          cd ..
 
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
@@ -22,7 +39,7 @@ stages:
 #   workflow_dispatch:
 
 # jobs:
-#   build:
+  
 #     runs-on: ubuntu-latest
 
 #     steps:
