@@ -5,6 +5,9 @@ stages:
       - job: InstallDependencies
         steps:
         - script: |
+            python3 -m pip install -r requirements.txt
+          displayName: "Install dependencies"
+        - script: |
             python -m venv venv
             source venv/bin/activate
           displayName: "Create and Activate enviroment"
